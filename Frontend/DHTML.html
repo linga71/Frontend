@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .c1 {
+            background-color: green;
+        }
+
+        .c2 {
+            border: 3px dotted;
+        }
+
+        p {
+            border: solid black;
+            color: white;
+            background-color: blue;
+    </style>
+    <script>
+    function ChangeImage()
+{
+    //alert(s1.value)
+   a = document.getElementById("im1");
+   a.src= s1.value;
+
+}
+function applycss()
+{
+    a = document.getElementById("d1");
+    a.setAttribute("class","c1 c2 c3")
+}
+function removecss()
+{
+    a = document.getElementById("d1");
+    a.removeAttribute("class")
+}
+function AddComment()
+{
+    a = document.getElementById("d1");
+    e  = document.createElement("p");    //"<p> <p>"
+    e.append(comment.value);  // <p> india </p>
+    a.append(e); //<div> <p>india</p></div>
+}
+function RemoveComment()
+{
+    a = document.getElementById("d1");
+    a.removeChild(a.lastChild);
+    //a.removeChild(a.lastChild)
+}
+    </script>
+    <div id="d1" class="c1 c2 c3" style="text-align:center;">
+        <img id="im1" src="Images/a.jpg">
+        <input type=button value="ChangeImage" onclick=>
+        <select id="s1" onchange="ChangeImage()">
+            <option>Images/a.jpg</option>
+            <option>Images/b.jpg</option>
+            <option>Images/c.jpg</option>
+            <option>Images/d.gif</option>
+        </select><br>
+        <input type="button" value="Apply CSS" onclick="applycss()">
+        <input type="button" value="Remove CSS" onclick="removecss()"><br><br>
+<textarea id="comment"></textarea><br><br>
+        <input type="button" value="Apply Comment" onclick="AddComment()">
+        <input type="button" value="remove Comment" onclick="RemoveComment()">
+    </div>
+    <hr />
+</head>
+<body>
+
+</body>
+</html>
